@@ -1,0 +1,74 @@
+'*************************************************************************
+'*
+'* File:           Fix_7hdc.vbs
+'* Created:        2011-01-03 by cdob
+'* Version:        0.11
+'*
+'* http://www.911cd.net/forums//index.php?showtopic=24245
+'*
+'* Purpose:
+'* enable installed, but disabled mass storage drivers, e.g. msahci.sys
+'* install additional mass storage drivers
+'*
+'* Runtime environment:
+'* Windows 7 installation DVD / USB
+'* relating PE
+'*
+'* used external applications (default integrated at runtime environment)
+'* reg.exe, dism.exe, notepad.exe
+'*
+'*************************************************************************
+
+' ------------------------------------------------------------------------
+'
+' based on PNPDriverMatch.vbs
+' http://technet.microsoft.com/en-us/magazine/2006.05.utilityspotlight.aspx
+'
+' I agree that Microsoft has no warranty, obligations or liability
+' for any Sample Application Files.
+'
+'<header original file> ==================================================
+'
+' Windows Script Host Sample Script
+'
+' ------------------------------------------------------------------------
+'               Copyright (C) 2006 Microsoft Corporation
+'
+' You have a royalty-free right to use, modify, reproduce and distribute
+' the Sample Application Files (and/or any modified version) in any way
+' you find useful, provided that you agree that Microsoft has no warranty,
+' obligations or liability for any Sample Application Files.
+' ------------------------------------------------------------------------
+
+'********************************************************************
+'*
+'* File:           PNPDriverMatch.vbs
+'* Created:        03/06/2006
+'* Version:        1.0.2
+'*
+'* Main Function:  VBScipt to examine a folder of Plug & Play drivers,
+'*                 find INF files that have PNP IDs found on the computer,
+'*                 and optionally copy the matching drivers folders to a
+'*                 specified destination folder.
+'*
+'* Usage:  cscript PNPDriverMatch.vbs /folder:folder path
+'*         [/dest:folder path]  [/log:log file path]
+'*         [/class:class filter] [/provider:provider filter]
+'*         [/excludeclass] [/excludeprovider] [/q] [/?]
+'*
+'* Copyright (C) 2006 Microsoft Corporation
+'*
+'*
+'* Revisions:
+'*
+'* 1.0.0 - 06/22/2005 - Created.
+'* 1.0.1 - 03/06/2006 - Updated RegularExpression class.  Changed
+'*                      Expang_objDriverFolderDictStringVariables function to use
+'*                      updated MatchText method of the
+'*                      RegularExpression class
+'* 1.0.2 - 03/22/2006 - Added EscapeXmlMarkup method to RegularExpression
+'*                      class.
+'*
+'********************************************************************
+'
+'</header original file> ============================================
